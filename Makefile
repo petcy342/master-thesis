@@ -28,7 +28,6 @@ else
 	$(error "The author only runs Linux and macOS on their machine. If tou have another platform, feel free to adapt this work to that platform.")
 endif
 
-
 $(PDFNAME).pdf: $(TEXMAINFILE) *.tex
 	$(MKLATEX) $(MKLATEXOPTS) $<
 
