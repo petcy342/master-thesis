@@ -5,7 +5,7 @@ OPEN-CMD=""
 
 
 # Change name of this if you change the name of demothesis.tex, should be name of the main tex file
-TEXMAINFILE = hanel742-thesis.tex
+TEXMAINFILE = demothesis.tex
 # Name that you would like for your resulting pdf file, without extension.
 # Defaults to $(TEXMAINFILE) with .pdf as extension
 PDFNAME = $(shell basename -s.tex $(TEXMAINFILE))
@@ -19,13 +19,12 @@ all: .PHONY $(PDFNAME).pdf
 .PHONY: platform-check
 
 platform-check:
-	@echo "Platoform.."
 ifeq ($(UNAME_S),Linux)
 	$(eval OPEN-CMD = xdg-open)
 else ifeq ($(UNAME_S),Darwin)
 	$(eval OPEN-CMD = open)
 else
-	$(error "The author only runs Linux and macOS on their machine. If tou have another platform, feel free to adapt this work to that platform.")
+	$(error "The author only runs Linux and macOS on their machines. If tou have another OS, feel free to adapt this work to that OS.")
 endif
 
 $(PDFNAME).pdf: $(TEXMAINFILE) *.tex
