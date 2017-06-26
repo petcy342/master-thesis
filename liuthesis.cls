@@ -6,9 +6,9 @@
 %% Maintainer: 
 %% Created: Fri Mar 20 08:25:23 2009 (CET)
 %% Version: 
-%% Last-Updated: Mon Jun 26 09:42:16 2017 (+0200)
+%% Last-Updated: Mon Jun 26 14:07:39 2017 (+0200)
 %%           By: Ola Leifler
-%%     Update #: 1499
+%%     Update #: 1516
 %% URL: 
 %% Keywords: 
 %% Compatibility: 
@@ -777,12 +777,13 @@
   \iflic
   \vfill
   \begin{center}
-    {\small
-    This is a Swedish Licentiate’s Thesis\\[2\baselineskip]
-    Swedish postgraduate education leads to\\ a doctor’s degree and/or a
+    {\footnotesize
+    This is a Swedish Licentiate’s Thesis\\[0.8\baselineskip]
+    Swedish postgraduate education leads to a doctor’s degree and/or a
     licentiate’s degree.\\
     A doctor’s degree comprises 240 ECTS credits
     (4 years of full-time studies).\\
+    \vspace{-0.3\baselineskip}
     A licentiate’s degree comprises 120 ECTS credits.}
   \end{center}
   \fi
