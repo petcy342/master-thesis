@@ -6,9 +6,9 @@
 %% Maintainer:
 %% Created: Fri Mar 20 08:25:23 2009 (CET)
 %% Version:
-%% Last-Updated: Mon Aug 21 09:20:25 2017 (+0200)
+%% Last-Updated: Mon Aug 21 09:25:33 2017 (+0200)
 %%           By: Ola Leifler
-%%     Update #: 1528
+%%     Update #: 1529
 %% URL:
 %% Keywords:
 %% Compatibility:
@@ -373,14 +373,8 @@
 \RequirePackage{calc}
 \RequirePackage{ragged2e}
 
-\newlength{\marginboxlength}
-\setlength{\marginboxlength}{\paperwidth}
-\addtolength{\marginboxlength}{-\textwidth}
-\addtolength{\marginboxlength}{-\spinemargin}
-\addtolength{\marginboxlength}{-2mm}
-
-\definecolor{nicered}{rgb}{.647,.129,.149}
-\newsavebox{\feline@article}
+\definecolor{nicered}{rgb}{.647,.129,.149} 
+\newsavebox{\feline@article} 
 \newcommand\feline@article@marker[1][4cm]{%
   \sbox\feline@article{%
     \resizebox{!}{#1}{\fboxsep=1pt%
