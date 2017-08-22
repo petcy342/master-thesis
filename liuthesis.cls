@@ -6,9 +6,9 @@
 %% Maintainer:
 %% Created: Fri Mar 20 08:25:23 2009 (CET)
 %% Version:
-%% Last-Updated: Mon Aug 21 09:25:33 2017 (+0200)
+%% Last-Updated: Tue Aug 22 11:45:32 2017 (+0200)
 %%           By: Ola Leifler
-%%     Update #: 1529
+%%     Update #: 1530
 %% URL:
 %% Keywords:
 %% Compatibility:
@@ -817,7 +817,7 @@ teknisk och administrativ art. Upphovsmannens ideella rätt innefattar rätt att
 bli nämnd som upphovsman i den omfattning som god sed kräver vid användning av
 dokumentet på ovan beskrivna sätt samt skydd mot att dokumentet ändras eller
 presenteras i sådan form eller i sådant sammanhang som är kränkande för
-upphovsmannenslitterära eller konstnärliga anseende eller egenart. För
+upphovsmannens litterära eller konstnärliga anseende eller egenart. För
 ytterligare information om Linköping University Electronic Press se förlagets
 hemsida \href{http://www.ep.liu.se/}{http://www.ep.liu.se/}.
 \vspace*{2cm}
