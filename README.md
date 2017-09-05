@@ -3,9 +3,27 @@
 This is `liuthesis`, a modern class for writing a thesis for PhD, Licenciate,
 Master, or Bachelor (plus some more) at Linköping University (LiU) in Sweden. 
 
-## Authors
+## Contributors
 
-Ola Leifler, ola.leifler@liu.se, 2011-2017
+This list is not sorted in any particular order. Initial work was done by Ola
+Leifler, but several people have since made contributions to liuthesis. See the 
+commit log for details.
+
+Ola Leifler, ola.leifler@liu.se
+Jonathan Jogenfors, jonathan.jogenfors@liu.se
+Ivan Ukhov, ivan.ukhov@liu.se
+
+## How to contribute
+
+Please do submit issues so we know what works and what does not work. 
+If your issue pertains to deviations from prescribed formats, please include a 
+pdf or other detailed description of how the typeset material should look. If 
+there are missing features or bugs, please provide a minimal example that 
+demonstrates the issue, along with a description of your environment. At best, 
+provide a merge request. Remember that each merge request should address one 
+specific issue, though, and be generally applicable to all theses at LiU. 
+Merge Requests will be reviewed and approved by main developers, currently Ola 
+Leifler.
 
 ## Where to download
 
