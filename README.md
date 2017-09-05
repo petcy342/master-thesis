@@ -9,9 +9,9 @@ This list is not sorted in any particular order. Initial work was done by Ola
 Leifler, but several people have since made contributions to liuthesis. See the 
 commit log for details.
 
-Ola Leifler, ola.leifler@liu.se
-Jonathan Jogenfors, jonathan.jogenfors@liu.se
-Ivan Ukhov, ivan.ukhov@liu.se
+- Ola Leifler, ola.leifler@liu.se
+- Jonathan Jogenfors, jonathan.jogenfors@liu.se
+- Ivan Ukhov, ivan.ukhov@liu.se
 
 ## How to contribute
 
