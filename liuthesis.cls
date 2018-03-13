@@ -364,9 +364,9 @@
 }
 \else
 \swedishenglish{
-  \RequirePackage[swedish]{babel}
+  \RequirePackage[swedish,english]{babel}
 }{
-  \RequirePackage[english]{babel}
+  \RequirePackage[english,swedish]{babel}
 }
 \fi
 %% Include articles
