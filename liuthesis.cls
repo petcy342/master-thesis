@@ -908,8 +908,8 @@ document integrity, please refer to its www home page:
 \settrimmedsize{290mm}{205mm}{*}
 \settypeblocksize{*}{34pc}{1.618} % golden ratio
 \else
-% S5 report size
-\settrimmedsize {242mm}{165mm}{*}
+% LiU-specific definition of the S5 format
+\settrimmedsize {240mm}{165mm}{*}
 \settypeblocksize{*}{28pc}{1.618}
 \fi
 
