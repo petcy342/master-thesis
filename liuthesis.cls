@@ -6,9 +6,9 @@
 %% Maintainer:
 %% Created: Fri Mar 20 08:25:23 2009 (CET)
 %% Version:
-%% Last-Updated: Mon Apr 16 14:47:03 2018 (+0200)
+%% Last-Updated: Mon Apr 16 14:54:01 2018 (+0200)
 %%           By: Ola Leifler
-%%     Update #: 1557
+%%     Update #: 1558
 %% URL:
 %% Keywords:
 %% Compatibility:
@@ -714,7 +714,7 @@
      {\Large\bfseries\@author}\\
      \vfill
     \swedishenglish{\gdef\@langlogo{sv}}{\gdef\@langlogo{en}}
-    \includegraphics[width=85mm]{liu_primary_black_\@langlogo}
+    \includegraphics[width=60mm]{liu_primary_black_\@langlogo}
    \\[12mm]
      {\footnotesize
      \swedishenglish{%
