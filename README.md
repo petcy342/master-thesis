@@ -261,6 +261,11 @@ initial value `\texttt{\textbackslash edition}`.
 \createvariable{dateofpublication}
 \createvariable{publicationseries}
 
+%% For subseries, such as "Linköping Studies in Statistics"
+
+\createvariable{subseries}
+\createvariable{subseriesnumber}
+
 %% Undergrad specific
 
 % faculty abbreviation, for the publication number
