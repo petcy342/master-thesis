@@ -145,7 +145,7 @@ prepared a `Makefile`. Edit the name of the main file that you wish to process
 (`TEXMAINFILE`) and run `make`. This will run `XeLaTeX` and `biber` as many
 times as needed to produce a PDF. To clean all auxiliary files, run `make
 clean`. To typeset the demos, run `make demos`, which will compile the demo
-files.
+files. To watch for changes and have `make` compile them in the background, use `make watch`.
 
 ## Including articles
 
