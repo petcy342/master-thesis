@@ -846,7 +846,7 @@ konstnärliga anseende eller egenart.
 
 För ytterligare information om Linköping University Electronic Press se
 förlagets hemsida
-\href{\texttt{http://www.ep.liu.se/}}{http://www.ep.liu.se/}.
+\href{http://www.ep.liu.se/}{\texttt{http://www.ep.liu.se/}}.
 
 
 \vspace*{2cm}
@@ -872,7 +872,7 @@ infringement.
 For additional information about the Linköping University Electronic Press and
 its procedures for publication and for assurance of document integrity, please
 refer to its www home page:
-\href{\texttt{http://www.ep.liu.se/}}{http://www.ep.liu.se/}.
+\href{http://www.ep.liu.se/}{\texttt{http://www.ep.liu.se/}}.
 
 \vfill{}
 \copyright{} \@author
