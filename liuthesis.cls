@@ -292,6 +292,7 @@
 \RequirePackage[pdfusetitle]{hyperref}
 \RequirePackage{amssymb}
 \RequirePackage{amsmath}
+\RequirePackage{etoolbox}
 
 % Set up input encoding and font handling
 \ifxetex
@@ -478,36 +479,80 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                    %
-%                     font selection, based on availability                               %
+%               font selection, based on availability                %
 %                                                                    %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\def\tryfonts#1#2{
-  \ifxetex
-    \def\primaryfont{"#1"} % first preferred font
-    \def\secondaryfont{"#2"} % if first font not avaliable
-    \count255=\interactionmode
-    \batchmode
-    \font\bodyfont=\primaryfont\space at 10pt
-    \ifx\bodyfont\nullfont
-      \font\bodyfont=\secondaryfont\space at 10pt
-      \ifx\bodyfont\nullfont
-        \errorstopmode
-        \errmessage{Neither #1 or #2 fonts installed, quitting..}
-      \else
-        \fontspec{#2}
-        \setmainfont{#2}
-      \fi
-    \else
-      \fontspec{#1}
-      \setmainfont{#1}
-    \fi
-    \interactionmode=\count255
-    \else
-    \typeout{ **** Please use XeTeX and install Calibri for correct typesetting ***}
-  \fi
-}
+\ifxetex
+  \newcommand*{\@makefont}[2]{
+    \ClassInfo{liuthesis}{Searching font candidates for \string#1}
+    \forcsvlist{\listadd\@args}{#2}
+    \edef\@restore{
+      \suppressfontnotfounderror=\the\suppressfontnotfounderror\relax
+      \interactionmode=\the\interactionmode\relax
+    }
+    \renewcommand*{\do}[1]{ % Loop body
+      \ifdefmacro{##1}{
+        \ifdefvoid{##1}{}{ % else
+          \let#1##1
+          \ClassInfo{liuthesis}{\string##1 selected}
+          \listbreak
+        }
+      }{
+        \batchmode
+        \suppressfontnotfounderror=1
+        \ifdef{\IfFontExistsTF}{
+          \IfFontExistsTF{##1}{
+            \@restore
+            \newfontfamily{#1}{##1}
+            \ClassInfo{liuthesis}{Font ##1 selected}
+            \listbreak
+          }{
+            \@restore
+            \ClassWarning{liuthesis}{Font ##1 not available}
+          }
+        }{
+          \font\bodyfont="##1"\space at 10pt
+          \@restore
+          \ifdefequal{\bodyfont}{\nullfont}{
+            \ClassWarning{liuthesis}{Font ##1 not available}
+          }{
+            \newfontfamily{#1}{##1}
+            \ClassInfo{liuthesis}{Font ##1 selected}
+            \listbreak
+          }
+        }
+      }
+    }
+    \dolistloop{\@args} % Execute loop
+    \let\@args\undefined % Clear list
+    \ifundef{#1}{
+      \ClassError{liuthesis}{Font for \string#1 not found}{}
+      \newcommand*{#1}{} % Avoid undefined control sequence errors
+    }{}
+  }
+  \AtBeginDocument{
+    \@makefont{\@calibri}{Calibri,Carlito}
+    \ifexhibitpage\iflith\relax\else
+      \@makefont{\@korolev}{KorolevLiU,\@calibri}
+    \fi\fi
+  }
+
+\else
+  \ClassWarning{liuthesis}{Please use XeTeX and install Calibri for correct typesetting}
+  \AtBeginDocument{
+    \IfFileExists{t1carlito-osf.fd}{
+      \newcommand*{\@calibri}{\fontfamily{Carlito-OsF}\selectfont}
+    }{
+      \newcommand*{\@calibri}{}
+    }
+    \ifexhibitpage\iflith\relax\else
+      \let\@korolev\@calibri
+    \fi\fi
+  }
+
+\fi % end ifxetex
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                    %
@@ -516,7 +561,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\exhibitpagelith}{%
-  \tryfonts{Calibri}{Carlito}
+  \@calibri
     \copypagestyle{exhibitpagestyle}{plain}
     \makeevenfoot{exhibitpagestyle}{ISBN \@isbn}{}{ISSN \@issn}
     \makeoddfoot{exhibitpagestyle}{ISBN \@isbn}{}{ISSN \@issn}
@@ -549,7 +594,7 @@
     \vspace*{1mm}
   \end{center}
   \clearpage{}
-  \tryfonts{Calibri}{Carlito}
+  \@calibri
     \small \textbf{Abstract}\\
     \@abstract
     \vfill
@@ -565,7 +610,7 @@
 
 \newcommand{\exhibitpagefilfak}{%
   \begin{center}
-    \tryfonts{KorolevLiU}{Calibri}
+    \@korolev
       \@publicationseries{} No. \@thesisnumber
       \ifsubseries
           \\\@subseries{} No. \@subseriesnumber
@@ -635,7 +680,7 @@
 \fi
 
 \newcommand\makeundergraduatetitle{%
-  {\tryfonts{Calibri}{Carlito}
+  {\@calibri
       {\raggedleft%
       \sffamily%
       \swedishenglish{%
@@ -669,17 +714,17 @@
       \swedishenglish{\ifsubtitleswedish}{\ifsubtitleenglish} -- {\fontsize{13pt}{15pt}\selectfont\swedishenglish{\@subtitleswedish}{\@subtitleenglish}\par}\fi%
       \hrulefill{}
       \\{}
-      {\tryfonts{Calibri}{Carlito}{%
+      {\@calibri{%
           \fontsize{13pt}{15pt}\selectfont%
           \textit{\swedishenglish{\@titleenglish}{\@titleswedish}}\par}%
         \swedishenglish{\ifsubtitleenglish}{\ifsubtitleswedish}--
         {\fontsize{13pt}{15pt}\textit{\selectfont\swedishenglish{\@subtitleenglish}{\@subtitleswedish}}\par}
       \fi}%
       \vspace*{10mm}%
-      {\tryfonts{Calibri}{Carlito}\fontsize{12pt}{13pt}\selectfont\textbf{\@author}\par
+      {\@calibri\fontsize{12pt}{13pt}\selectfont\textbf{\@author}\par
       }%
       \vspace*{10mm}%
-      {\tryfonts{Calibri}{Carlito}\fontsize{10pt}{11pt}\selectfont
+      {\@calibri\fontsize{10pt}{11pt}\selectfont
         \parbox{\textwidth}{\swedishenglish{Handledare}{Supervisor}: \@supervisor\\
           \swedishenglish{Examinator}{Examiner}: \@examiner\\[2\baselineskip]
         \ifexternalsupervisor \swedishenglish{Extern
@@ -700,7 +745,7 @@
   }
 
 \newcommand{\makegraduatetitle}{
-  \tryfonts{Calibri}{Carlito}
+  \@calibri
   {\center
     {\footnotesize\centerline\@publicationseries{}%\\
       \ifphd
@@ -821,7 +866,7 @@
 % Intro page for MSC theses
 \newcommand{\makeinsidepage}{
   \thispagestyle{empty}
-  {\tryfonts{Calibri}{Carlito}\selectfont
+  {\@calibri\selectfont
 
 \vspace*{2cm}
  \section*{Upphovsrätt}
