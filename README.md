@@ -155,9 +155,12 @@ files.
 
 With the `\includearticle` command, you can include PDF articles and refer to
 them in your thesis. An example of this is given in the demo files (see above).
-`<citekey>` should be the same as the key in your bibliography which describes
-your article, and the file name of the PDF file. You can refer to your articles
-in your thesis using the reference key `art:<citekey>`.
+An optional first argument is the range of pages to include from the pdf file.
+The complete pdf file is included if this argument is omitted.  The second
+argument is the path of the pdf file.  The third argument is the citekey of the
+paper. This is used for putting a citation before th paper in the thesis, and
+to label the thesis.  You can refer to your articles in your thesis using the
+reference key `art:<citekey>`.
 
 ```
 \includearticletex{<citekey>}

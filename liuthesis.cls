@@ -411,7 +411,7 @@
 \setlength{\TPHorizModule}{\paperwidth - 4.3cm}
 \newcommand{\papermark}{Paper \thearticle}
 
-\newcommand{\includearticle}[2][pages=-]{%
+\newcommand{\includearticle}[3][pages=-]{%
   \@twosidetrue
   \refstepcounter{article}%
   \cleartorecto%
@@ -419,8 +419,10 @@
   \mbox{}%
   \vspace*{\fill}
    \begin{center}%
-     {\hfill \feline@chm[2.5cm]\\[2\baselineskip]}
-     {\fullcite{#2}}
+     \begin{flushleft}%
+       {\hfill \feline@chm[2.5cm]\\[2\baselineskip]}
+       {\fullcite{#3}}
+     \end{flushleft}%
   \end{center}%
   \vspace*{\fill}%
   \cleartorecto%
