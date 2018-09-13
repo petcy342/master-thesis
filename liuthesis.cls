@@ -542,9 +542,13 @@
 \else
   \ClassWarning{liuthesis}{Please use XeTeX and install Calibri for correct typesetting}
   \AtBeginDocument{
-    \IfFileExists{t1carlito-osf.fd}{
-      \newcommand*{\@calibri}{\fontfamily{Carlito-OsF}\selectfont}
+    \IfFileExists{carlito.sty}{
+      \let\old@sf\sfdefault
+      \RequirePackage{carlito} % Changes \sfdefault to \carlito
+      \let\sfdefault\old@sf
+      \newcommand*{\@calibri}{\carlito}
     }{
+      \ClassWarning{liuthesis}{Package "carlito" not found}
       \newcommand*{\@calibri}{}
     }
     \ifexhibitpage\iflith\relax\else
