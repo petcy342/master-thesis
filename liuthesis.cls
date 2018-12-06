@@ -204,7 +204,7 @@
   \phdfalse
   \licfalse
   \level{A}
-  \gdef\@thesistypenameenglish{Master}
+  \gdef\@thesistypenameenglish{Master's}
   \gdef\@thesistypenameswedish{avancerad nivå}
   \thesiscredits{30}
   \PassOptionsToClass{oneside}{memoir}
@@ -215,7 +215,7 @@
   \phdfalse
   \licfalse
   \level{G}
-  \gdef\@thesistypenameenglish{Bachelor}
+  \gdef\@thesistypenameenglish{Bachelor's}
   \gdef\@thesistypenameswedish{grundnivå}
   \thesiscredits{16}
   \PassOptionsToClass{oneside}{memoir}
