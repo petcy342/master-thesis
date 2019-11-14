@@ -382,8 +382,8 @@
 \RequirePackage{calc}
 \RequirePackage{ragged2e}
 
-\definecolor{nicered}{rgb}{.647,.129,.149} 
-\newsavebox{\feline@article} 
+\definecolor{nicered}{rgb}{.647,.129,.149}
+\newsavebox{\feline@article}
 \newcommand\feline@article@marker[1][4cm]{%
   \sbox\feline@article{%
     \resizebox{!}{#1}{\fboxsep=1pt%
@@ -642,7 +642,7 @@
     ISBN \@isbn{} ISSN \@issn
   \clearpage{}
   \normalsize
-   {\@publicationseries{} No. \@thesisnumber 
+   {\@publicationseries{} No. \@thesisnumber
       \ifsubseries
           \\\@subseries{} No. \@subseriesnumber
       \fi}
@@ -949,7 +949,7 @@ refer to its www home page:
 \raggedbottom
 \midsloppy
 
-\newlength{\mylen}	% a length
+\newlength{\mylen}  % a length
 \newcommand{\alphabet}{abcdefghijklmnopqrstuvwxyzåäö} % the lowercase
                                 % alphabet
 \begingroup
@@ -1044,7 +1044,7 @@ refer to its www home page:
 \phantomsection
 \swedishenglish{\addcontentsline{toc}{chapter}{Sammanfattning}}
 {\addcontentsline{toc}{chapter}{Abstract}}
-\clearpage
+\cleardoublepage
 \ifstudent
 \begin{abstract}
   \@abstract
@@ -1052,16 +1052,16 @@ refer to its www home page:
 \else
 \abstractpages
 \fi
-\clearpage
+\cleardoublepage
   \newpage
   \@acknowledgments
   \swedishenglish{\addcontentsline{toc}{chapter}{Författarens tack}}
   {\addcontentsline{toc}{chapter}{Acknowledgments}}
-  \clearpage
-  {\pagestyle{plain}\tableofcontents\relax\clearpage}
-  \iftotalfigures {\pagestyle{plain}\listoffigures\relax\clearpage}\fi
-  \iftotaltables {\pagestyle{plain}\listoftables\relax\clearpage}\fi
-  \@ifpackageloaded{todonotes}{\pagestyle{plain}\listoftodos\relax\clearpage}{}
+  \cleardoublepage
+  {\pagestyle{plain}\tableofcontents\relax\cleardoublepage}
+  \iftotalfigures {\pagestyle{plain}\listoffigures\relax\cleardoublepage}\fi
+  \iftotaltables {\pagestyle{plain}\listoftables\relax\cleardoublepage}\fi
+  \@ifpackageloaded{todonotes}{\pagestyle{plain}\listoftodos\relax\cleardoublepage}{}
   \ifprinterfriendly
     \cleartooddpage
   \else
