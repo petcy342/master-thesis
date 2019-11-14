@@ -1044,7 +1044,7 @@ refer to its www home page:
 \phantomsection
 \swedishenglish{\addcontentsline{toc}{chapter}{Sammanfattning}}
 {\addcontentsline{toc}{chapter}{Abstract}}
-\clearpage
+\cleardoublepage
 \ifstudent
 \begin{abstract}
   \@abstract
@@ -1052,16 +1052,16 @@ refer to its www home page:
 \else
 \abstractpages
 \fi
-\clearpage
+\cleardoublepage
   \newpage
   \@acknowledgments
   \swedishenglish{\addcontentsline{toc}{chapter}{Författarens tack}}
   {\addcontentsline{toc}{chapter}{Acknowledgments}}
-  \clearpage
-  {\pagestyle{plain}\tableofcontents\relax\clearpage}
-  \iftotalfigures {\pagestyle{plain}\listoffigures\relax\clearpage}\fi
-  \iftotaltables {\pagestyle{plain}\listoftables\relax\clearpage}\fi
-  \@ifpackageloaded{todonotes}{\pagestyle{plain}\listoftodos\relax\clearpage}{}
+  \cleardoublepage
+  {\pagestyle{plain}\tableofcontents\relax\cleardoublepage}
+  \iftotalfigures {\pagestyle{plain}\listoffigures\relax\cleardoublepage}\fi
+  \iftotaltables {\pagestyle{plain}\listoftables\relax\cleardoublepage}\fi
+  \@ifpackageloaded{todonotes}{\pagestyle{plain}\listoftodos\relax\cleardoublepage}{}
   \ifprinterfriendly
     \cleartooddpage
   \else
