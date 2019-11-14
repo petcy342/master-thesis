@@ -382,8 +382,8 @@
 \RequirePackage{calc}
 \RequirePackage{ragged2e}
 
-\definecolor{nicered}{rgb}{.647,.129,.149} 
-\newsavebox{\feline@article} 
+\definecolor{nicered}{rgb}{.647,.129,.149}
+\newsavebox{\feline@article}
 \newcommand\feline@article@marker[1][4cm]{%
   \sbox\feline@article{%
     \resizebox{!}{#1}{\fboxsep=1pt%
@@ -642,7 +642,7 @@
     ISBN \@isbn{} ISSN \@issn
   \clearpage{}
   \normalsize
-   {\@publicationseries{} No. \@thesisnumber 
+   {\@publicationseries{} No. \@thesisnumber
       \ifsubseries
           \\\@subseries{} No. \@subseriesnumber
       \fi}
@@ -949,7 +949,7 @@ refer to its www home page:
 \raggedbottom
 \midsloppy
 
-\newlength{\mylen}	% a length
+\newlength{\mylen}  % a length
 \newcommand{\alphabet}{abcdefghijklmnopqrstuvwxyzåäö} % the lowercase
                                 % alphabet
 \begingroup
