@@ -691,13 +691,13 @@
       \begin{large}%
         Linköpings universitet | \@department\par
         Examensarbete på \@thesistypenameswedish, \@thesiscredits hp | \@thesissubject\par%
-        20\@publicationyear\ | \isrn\par%
+        \@publicationyear\ | \isrn\par%
       \end{large}%
       }{%
       \begin{large}%
         Linköping University | \@departmentenglish\par
         \@thesistypenameenglish{} thesis, \@thesiscredits{} ECTS | \@thesissubject\par%
-        20\@publicationyear\ | \isrn\par%
+        \@publicationyear\ | \isrn\par%
       \end{large}%
       }%
       }%
