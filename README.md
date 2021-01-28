@@ -1,5 +1,3 @@
-# THIS REPOSITORY IS DEPRECATED. PLEASE REFER TO gitlab.liu.se/olale55/liuthesis instead.
-
 # LaTeX class for LiU Thesis
 
 This is `liuthesis`, a modern class for writing a thesis for PhD, Licenciate,
